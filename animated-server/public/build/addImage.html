@@ -1,0 +1,32 @@
+﻿<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <link rel="stylesheet" href="./addImage.css" />
+    <div id="root">
+        <div id="form">
+            <img id="output" />
+            <script>
+                var loadFile = function(event) {
+                    var output = document.getElementById('output');
+                    output.src = URL.createObjectURL(event.target.files[0]);
+                    output.onload = function() {
+                        URL.revokeObjectURL(output.src) // free memory
+                        }
+                };
+            </script>
+            <form method="post" action="/postimagedata" enctype="multipart/form-data">
+                <input type="file" name="image" id="image" onchange="loadFile(event)"/>
+                <div id="tags">
+                    <input type="text" name="tag1" placeholder="Tag" />
+                    <input type="text" name="tag2" placeholder="Tag" />
+                    <input type="text" name="tag3" placeholder="Tag" />
+                </div>
+                <input type="submit" value="Add Image" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>

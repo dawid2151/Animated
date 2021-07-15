@@ -1,0 +1,26 @@
+header {
+    display: flex;
+    height: 10%;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(255, 63, 153);
+}
+
+header h1 {
+    font-size: 8vh;
+    font-family: Impact;
+    color: white;
+    margin-left: 10%;
+}
+header input {
+    margin-left: 10%;
+    padding-left: 10px;
+    height: 3vh;
+    width: 20%;
+    background-color: rgba(230,230,230,1);
+    border: none;
+    border-radius: 1em;  
+}
+header input:focus {
+    outline: none;
+}
